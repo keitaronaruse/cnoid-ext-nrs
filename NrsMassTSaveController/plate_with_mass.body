@@ -1,0 +1,40 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: PlateWithMass
+
+links:
+  -
+    name: Plate
+    translation: [ 0, 0, 0 ]
+    jointType: free
+    jointId: 0
+    material: Default
+    centerOfMass: [ 0, 0, 0 ]
+    mass: 0.000
+    elements: 
+      Shape:
+        geometry:
+          type: Box
+          size: [ 0.6, 0.5, 0.001 ]
+        appearance: &BodyAppearance
+          material:
+            diffuseColor: [ 0, 0.8, 0 ]
+  -
+    name: Mass
+    parent: Plate
+    translation: [ 0, 0, 0.2 ]
+    jointType: fixed
+    jointId: 1
+    centerOfMass: [ 0, 0, 0 ]
+    mass: 80.0
+    inertia: [
+      0.08, 0, 0, 
+      0, 0.08, 0, 
+      0, 0, 0.08 ]
+    elements:
+      Shape:
+        geometry: 
+          type: Sphere
+          radius: 0.010
+        appearance: *BodyAppearance

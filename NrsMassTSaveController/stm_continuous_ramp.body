@@ -1,0 +1,91 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+name: ContinuousRamp
+links:
+  -
+    name: FullRamp12
+    jointType: fixed
+    material: Ground
+    elements:
+      Shape: 
+        geometry:
+          type: Extrusion
+          crossSection: [
+            0.000, 0.000, 
+            2.400, 0.000,
+            1.200, 0.322,
+            0.000, 0.000 
+            ]
+          spine: [ 0, -1.200, 0, 0, 1.200, 0 ]
+        appearance: &FullRampAppearance
+          material:
+            diffuseColor: [ 0.6, 0.4, 0.2 ]
+            shininess: 0.0
+  -
+    name: FullRamp3
+    parent: FullRamp12
+    jointType: fixed
+    material: Ground
+    elements:
+      Shape: 
+        geometry:
+          type: Extrusion
+          crossSection: [
+            2.400, 0.000, 
+            3.600, 0.000,
+            3.600, 0.322,
+            2.400, 0.000 
+            ]
+          spine: [ 0, -1.200, 0, 0, 1.200, 0 ]
+        appearance: *FullRampAppearance
+  -
+    name: HalfRampRamp56
+    parent: FullRamp12
+    jointType: fixed
+    material: Ground
+    elements:
+      Shape: 
+        geometry:
+          type: Extrusion
+          crossSection: [
+            -1.200, 0.000, 
+             0.000, 0.000,
+            -0.600, 0.161,
+            -1.200, 0.000
+            ]
+          spine: [ 0, -1.200, 0, 0, 1.200, 0 ]
+        appearance: *FullRampAppearance
+  -
+    name: HalfRampRamp34
+    parent: FullRamp12
+    jointType: fixed
+    material: Ground
+    elements:
+      Shape: 
+        geometry:
+          type: Extrusion
+          crossSection: [
+            -2.400, 0.000, 
+            -1.200, 0.000,
+            -1.800, 0.161,
+            -2.400, 0.000
+            ]
+          spine: [ 0, -1.200, 0, 0, 1.200, 0 ]
+        appearance: *FullRampAppearance
+  -
+    name: HalfRampRamp12
+    parent: FullRamp12
+    jointType: fixed
+    material: Ground
+    elements:
+      Shape: 
+        geometry:
+          type: Extrusion
+          crossSection: [
+            -3.600, 0.000, 
+            -2.400, 0.000,
+            -3.000, 0.161,
+            -3.600, 0.000
+            ]
+          spine: [ 0, -1.200, 0, 0, 1.200, 0 ]
+        appearance: *FullRampAppearance
